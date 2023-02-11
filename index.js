@@ -26,9 +26,13 @@ const loadImage = () => {
   const generatedIndex = Math.floor(Math.random() * cities.length);
   const city = cities[generatedIndex];
 
-  const img = document.createElement("img");
-  img.src = city.imageUrl;
-  container.appendChild(img);
+  if (city.imageUrl) {
+    const img = document.createElement("img");
+    img.src = city.imageUrl;
+    container.appendChild(img);
+  } else {
+    loadParagraph("No image available for this city.");
+  }
 
   loadParagraph(`City name: ${city.name} `);
   loadParagraph(`Country: ${city.country}`);
@@ -51,14 +55,6 @@ form.addEventListener("submit", (e) => {
   const country = document.querySelector("#country");
   const population = document.querySelector("#population");
   const imageUrl = document.querySelector("#imageUrl");
-
-  // imageUrl checker
-  // const regex = /(https?:\/\/.*\.(?:png|jpg))/;
-
-  // if (!regex.test(imageUrl)) {
-  //   alert("Use valid image url.");
-  //   return;
-  // }
 
   cities.push(
     new City({
