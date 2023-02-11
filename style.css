@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+form,
+.display-box,
+.box-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#boxForm {
+  display: none;
+}
